@@ -1,6 +1,6 @@
 import DashboardLayout from '@/components/DashboardLayout';
-import { mockVehicle, mockAlerts, mockFines, mockBlocks, mockTrips } from '@/lib/mock-data';
-import { Activity, Weight, AlertTriangle, TrendingUp, Link2, CheckCircle, XCircle, Clock, Gauge, BarChart3 } from 'lucide-react';
+import { mockVehicle, mockAlerts, mockFines, mockTrips } from '@/lib/mock-data';
+import { Activity, Weight, AlertTriangle, TrendingUp, CheckCircle, Clock, Gauge, BarChart3 } from 'lucide-react';
 import { Progress } from '@/components/ui/progress';
 
 const alertLevelLabel = (level: number) => {
@@ -124,33 +124,23 @@ const OwnerDashboard = () => {
             </div>
           </section>
 
-          {/* Blockchain Verification */}
+          {/* Compliance Status */}
           <section>
-            <p className="section-title">Blockchain Verification</p>
+            <p className="section-title">Compliance Status</p>
             <div className="glass-card p-5 space-y-4">
               <div className="flex items-center justify-between">
-                <span className="data-label">Chain Status</span>
+                <span className="data-label">Status</span>
                 <span className="alert-badge-green flex items-center gap-1">
-                  <CheckCircle className="w-3 h-3" /> Valid
+                  <CheckCircle className="w-3 h-3" /> Compliant
                 </span>
               </div>
-              <div>
-                <span className="data-label">Latest Hash</span>
-                <p className="hash-text mt-1 break-all">{mockBlocks[mockBlocks.length - 1].currentHash}</p>
+              <div className="flex items-center justify-between">
+                <span className="data-label">Last Verified</span>
+                <span className="text-sm text-muted-foreground">2 min ago</span>
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <span className="data-label">Block #</span>
-                  <p className="data-value">{mockBlocks[mockBlocks.length - 1].blockNumber}</p>
-                </div>
-                <div>
-                  <span className="data-label">Signature</span>
-                  <p className="font-mono text-xs text-success mt-1">✅ Verified</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-2 pt-2 border-t border-border">
-                <Link2 className="w-4 h-4 text-primary" />
-                <span className="text-sm text-primary cursor-pointer hover:underline">View Full Chain →</span>
+              <div className="flex items-center justify-between">
+                <span className="data-label">Data Sync</span>
+                <span className="text-sm text-success font-medium">Active</span>
               </div>
             </div>
 
